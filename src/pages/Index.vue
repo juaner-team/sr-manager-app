@@ -4,14 +4,17 @@
     <text class="h3">{{ isEven ? 'Even' : 'Odd' }}</text>
     <text>{{ count }}</text>
     <view>
-      <u-button type="primary" @click="add">Sync Add</u-button>
+      <u-button type="primary" @click="handleToAddressList">地址列表</u-button>
       <button @click="asyncAdd">Async Add</button>
     </view>
   </view>
 </template>
 <script setup>
-const add = () => {
-  Console.log('同步按下')
+const router = useRouter()
+
+const handleToAddressList = () => {
+  console.log('同步按下')
+  router.push({ name: 'adminAddressList' })
 }
 
 const asyncAdd = () => {
