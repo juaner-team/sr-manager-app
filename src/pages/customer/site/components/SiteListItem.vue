@@ -1,18 +1,18 @@
 <template>
-  <view class="adminAddressItem">
+  <view class="admin-site-item">
     <view class="top">
-      <view class="name">{{ address.name }}</view>
-      <view class="phone">{{ address.phone }}</view>
+      <view class="name">{{ site.name }}</view>
+      <view class="phone">{{ site.phone }}</view>
       <view class="tag">
         <text
-          v-if="address.status.type"
-          :class="['text', { red: address.status.name == '作废' }]"
-          >{{ address.status.name }}</text
+          v-if="site.status.type"
+          :class="['text', { red: site.status.name == '已作废' }]"
+          >{{ site.status.name }}</text
         >
       </view>
     </view>
     <view class="bottom">
-      {{ address.site }}
+      {{ site.site }}
       <u-icon name="edit-pen" :size="40" color="#999999"></u-icon>
     </view>
   </view>
@@ -20,7 +20,7 @@
 
 <script setup>
 const props = defineProps({
-  address: {
+  site: {
     type: Object,
     require: true,
     default: () => {}
@@ -28,8 +28,8 @@ const props = defineProps({
 })
 </script>
 
-<style scoped>
-.adminAddressItem {
+<style lang="scss" scoped>
+.admin-site-item {
   .top {
     display: flex;
     font-weight: bold;

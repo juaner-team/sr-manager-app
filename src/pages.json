@@ -2,7 +2,7 @@
   "pages": [
     //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
     {
-      "path": "pages/Index",
+      "path": "pages/home/Index",
       "name": "index",
       "style": {
         "navigationBarTitleText": "首页"
@@ -16,8 +16,22 @@
       }
     },
     {
-      "path": "pages/admin/address/List",
-      "name": "adminAddressList",
+      "path": "pages/admin/site/List",
+      "name": "adminSiteList",
+      "style": {
+        "navigationBarTitleText": ""
+      }
+    },
+    {
+      "path": "pages/customer/site/Edit",
+      "name": "customerSiteEdit",
+      "style": {
+        "navigationBarTitleText": ""
+      }
+    },
+    {
+      "path": "pages/customer/site/List",
+      "name": "customerSiteList",
       "style": {
         "navigationBarTitleText": ""
       }
