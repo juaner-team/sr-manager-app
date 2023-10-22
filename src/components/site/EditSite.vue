@@ -4,7 +4,7 @@
       <view class="item">
         <view class="left">收货人</view>
         <input
-          :value="site.name"
+          v-model="site.name"
           type="text"
           placeholder-class="line"
           placeholder="请填写收货人姓名"
@@ -13,7 +13,7 @@
       <view class="item">
         <view class="left">手机号码</view>
         <input
-          :value="site.phone"
+          v-model="site.phone"
           type="text"
           placeholder-class="line"
           placeholder="请填写收货人手机号"
@@ -22,7 +22,7 @@
       <view class="item" @tap="showRegionPicker">
         <view class="left">所在地区</view>
         <input
-          :value="site.address"
+          v-model="site.address"
           disabled
           type="text"
           placeholder-class="line"
@@ -32,7 +32,7 @@
       <view class="item address">
         <view class="left">详细地址</view>
         <textarea
-          :value="site.detailAddress"
+          v-model="site.detailAddress"
           type="text"
           placeholder-class="line"
           placeholder="街道、楼牌等"
@@ -41,7 +41,7 @@
       <view class="item address">
         <view class="left">备注</view>
         <textarea
-          :value="site.note"
+          v-model="site.note"
           type="text"
           placeholder-class="line"
           placeholder="备注"
@@ -58,8 +58,10 @@ const props = defineProps({
     require: true
   }
 })
+const emit = defineEmits(['update:modelValue'])
 
 const pickerShow = ref(false)
+const name = ref('eeeee')
 
 // const site = computed({
 //   get: () => props.modelValue || {},
@@ -71,20 +73,30 @@ const pickerShow = ref(false)
 const site = ref(props.modelValue)
 
 watch(
-  () => site,
+  site.value,
   (val) => {
     console.log('cccc')
-    context.emit('update:modelValue', val.value)
+    // emit('update:modelValue', val.value)
   },
   { deep: true }
 )
+
+// watch(
+//   () => name,
+//   (val) => {
+//     console.log('name', val)
+//   },
+//   { deep: true }
+// )
 
 // const site = computed(() => props.modelValue)
 
 // 展示地址选择器
 const showRegionPicker = () => {
   pickerShow.value = true
-  site.name = ''
+  // site.value.name = ''
+  console.log('name22', name.value)
+  console.log('site', site.value)
 }
 </script>
 <style lang="scss" scoped>

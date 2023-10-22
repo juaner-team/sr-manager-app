@@ -24,7 +24,7 @@ import EditSite from '@components/site/EditSite'
 
 const router = useRouter()
 const pickerShow = ref(false)
-const site = ref({
+const site = reactive({
   id: 1,
   name: '游X',
   phone: '183****5523',
