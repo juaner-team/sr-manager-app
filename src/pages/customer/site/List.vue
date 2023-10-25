@@ -11,7 +11,7 @@
   </view>
 </template>
 <script setup>
-import SiteListItem from './components/SiteListItem.vue'
+import SiteListItem from '@components/site/SiteListItem'
 
 const router = useRouter()
 

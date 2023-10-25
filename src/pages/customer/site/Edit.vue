@@ -20,11 +20,11 @@
   </view>
 </template>
 <script setup>
-import EditSite from '@components/site/EditSite'
+import EditSite from '@components/site/SiteEdit'
 
 const router = useRouter()
 const pickerShow = ref(false)
-const site = reactive({
+const site = ref({
   id: 1,
   name: '游X',
   phone: '183****5523',

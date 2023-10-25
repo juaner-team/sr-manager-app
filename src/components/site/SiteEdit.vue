@@ -58,10 +58,8 @@ const props = defineProps({
     require: true
   }
 })
-const emit = defineEmits(['update:modelValue'])
 
 const pickerShow = ref(false)
-const name = ref('eeeee')
 
 // const site = computed({
 //   get: () => props.modelValue || {},
@@ -72,38 +70,16 @@ const name = ref('eeeee')
 // })
 const site = ref(props.modelValue)
 
-watch(
-  site.value,
-  (val) => {
-    console.log('cccc')
-    // emit('update:modelValue', val.value)
-  },
-  { deep: true }
-)
-
-// watch(
-//   () => name,
-//   (val) => {
-//     console.log('name', val)
-//   },
-//   { deep: true }
-// )
-
-// const site = computed(() => props.modelValue)
-
 // 展示地址选择器
 const showRegionPicker = () => {
   pickerShow.value = true
   // site.value.name = ''
-  console.log('name22', name.value)
-  console.log('site', site.value)
 }
 </script>
 <style lang="scss" scoped>
 .edit-site {
   .top {
     background-color: #ffffff;
-    border-top: solid 2rpx $u-border-color;
     .item {
       display: flex;
       font-size: 32rpx;
